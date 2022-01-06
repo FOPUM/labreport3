@@ -59,9 +59,6 @@ public class Song {
                     hold = filename[i];
                     filename[i] = filename[i+1];
                     filename[i+1] = hold;
-                    hold = singer[i];
-                    singer[i] = singer[i+1];
-                    singer[i+1] = hold;
                     temp = year[i];
                     year[i] = year[i+1];
                     year[i+1] = temp;    
