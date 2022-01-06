@@ -1,10 +1,11 @@
 package labreport3;
 
-import java.util.Scanner;
+
 
 public class LabReport3 {
     
     public static void main(String[] args) {
+
         //Q1
 //        Money a = new Money();
 //        Money b = new Money(50000);
