@@ -1,5 +1,7 @@
 package labreport3;
 
+import java.util.Scanner;
+
 public class Song {
     private String[]title;
     private String[]filename;
@@ -80,31 +82,39 @@ public class Song {
     }
     
     public void searchTitle(String title){
+        Scanner sc = new Scanner(System.in);
         int songIndex=0;
-        int count= 0;
+        boolean foundSong = false;
         for(String songTitle : this.title){
             if(songTitle.equals(title)){
                 System.out.println(toString(songIndex));
-                count++;
+                foundSong = true;
             }
             songIndex++;
         }
-        if(count==0)
+        if(!foundSong){
             System.out.printf("No results found for \"%s\"\n",title);
+            System.out.print("Enter a song title: ");
+            searchTitle(sc.nextLine());
+        }
     }
     
     public void searchSinger(String singer){
+        Scanner sc = new Scanner(System.in);
         int songIndex=0;
-        int count= 0;
+        boolean foundSong = false;
         for(String singerName : this.singer){
             if(singerName.equals(singer)){
                 System.out.println(toString(songIndex));
-                count++;
+                foundSong = true;
             }
             songIndex++;
         }
-        if(count==0)
-            System.out.printf("No results found for \"%s\"\n", singer);
+        if(!foundSong){
+            System.out.printf("No results found for \"%s\"\n",singer);
+            System.out.print("Enter a singer name: ");
+            searchSinger(sc.nextLine());
+        }
     }
 
     

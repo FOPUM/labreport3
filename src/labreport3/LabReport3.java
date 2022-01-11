@@ -1,11 +1,13 @@
 package labreport3;
 
+import java.util.Scanner;
+
 
 
 public class LabReport3 {
     
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
         //Q1
 //        Money a = new Money();
 //        Money b = new Money(50000);
@@ -38,11 +40,17 @@ public class LabReport3 {
 //        song.nextSong();    /// DDD
 //        song.playSong();
         
-        song.sortTitle();
-        song.sortDuration();
-//        
-//        song.searchTitle("CCC");
-//        song.searchSinger("ggg");
+//        song.sortTitle();
+//        song.sortDuration();
+        
+        
+        System.out.print("Enter a song title: ");
+        String songTitle = sc.nextLine();
+        song.searchTitle(songTitle);
+        
+        System.out.print("Enter a singer name: ");
+        String singerName = sc.nextLine();
+        song.searchSinger(singerName);
         
         
         
