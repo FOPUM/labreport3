@@ -4,11 +4,11 @@ public class Song {
     private String[]title;
     private String[]filename;
     private String[]singer;
-    private int[]duration;
+    private double[]duration;
     private int[]year;
     private int currentSong = 0; 
 
-    public Song(String[] title, String[] filename, String[] singer, int[] duration, int[] year) {
+    public Song(String[] title, String[] filename, String[] singer, double[] duration, int[] year) {
         if(title.length<20){
             this.title = title;
             this.filename = filename;
@@ -32,14 +32,20 @@ public class Song {
                     hold = singer[i];
                     singer[i] = singer[i+1];
                     singer[i+1] = hold;
-                    int temp = duration[i];
+                    double temp = duration[i];
                     duration[i] = duration[i+1];
                     duration[i+1] = temp;
-                    temp = year[i];
+                    int temp1 = year[i];
                     year[i] = year[i+1];
-                    year[i+1] = temp;      
+                    year[i+1] = temp1;      
                 }
             }
+        }
+        System.out.println("-------------------------");
+        System.out.println("Sort the list by title: ");
+        System.out.println("-------------------------");
+        for(int i=0; i<title.length; i++){
+            System.out.println(toString(i));
         }
     }
     
@@ -47,7 +53,7 @@ public class Song {
         for(int pass=0; pass<title.length; pass++){
             for(int i=0; i<title.length-1; i++){
                 if(duration[i]> duration[i+1]){
-                    int temp = duration[i];
+                    double temp = duration[i];
                     duration[i] = duration[i+1];
                     duration[i+1] = temp;  
                     String hold = title[i];
@@ -59,11 +65,17 @@ public class Song {
                     hold = filename[i];
                     filename[i] = filename[i+1];
                     filename[i+1] = hold;
-                    temp = year[i];
+                    int temp1 = year[i];
                     year[i] = year[i+1];
-                    year[i+1] = temp;    
+                    year[i+1] = temp1;    
                 }
             }
+        }
+        System.out.println("---------------------------");
+        System.out.println("Sort the list by duration: ");
+        System.out.println("---------------------------");
+        for(int i=0; i<title.length; i++){
+            System.out.println(toString(i));
         }
     }
     
@@ -115,11 +127,11 @@ public class Song {
     }
 
     public String toString(int i) {
-        String str = String.format("Song: %s\n", title[i]);
+        String str = String.format("Song title: %s\n", title[i]);
         str += String.format("File name: %s\n", filename[i]);
         str += String.format("Singer: %s\n", singer[i]);
-        str += String.format("Duration: %d\n", duration[i]);
-        str += String.format("Year: %d\n", year[i]);
+        str += String.format("Duration: %.2f\n", duration[i]);
+        str += String.format("Year Published: %d\n", year[i]);
         return str;
     }
 //

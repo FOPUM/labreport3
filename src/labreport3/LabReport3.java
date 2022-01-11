@@ -24,7 +24,7 @@ public class LabReport3 {
         String[] title = {"BBB", "DDD", "AAA", "EEE", "CCC"};
         String[] filename = {"BBB.mp3", "DDD.mp3", "AAA.mp3", "EEE.mp3", "CCC.mp3"};
         String[] singer = {"bbb", "ddd", "aaa", "aaa", "ccc"};
-        int[]duration = {202,215,183,197,266};
+        double[]duration = {3.12,4.35,2.48,3.37,4.06};
         int[]year = {2002,2003,2008,2012,2021};
         Song song = new Song(title, filename, singer, duration, year);
                
@@ -40,8 +40,8 @@ public class LabReport3 {
         
         song.sortTitle();
         song.sortDuration();
-        
-        song.searchTitle("CCC");
+//        
+//        song.searchTitle("CCC");
 //        song.searchSinger("ggg");
         
         
